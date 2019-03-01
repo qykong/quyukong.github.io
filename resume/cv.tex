@@ -1,0 +1,146 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage[ampersand]{easylist}
+\usepackage{booktabs}% http://ctan.org/pkg/booktabs
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ top=20mm,
+ bottom=20mm
+ }
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\usepackage{enumitem}
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Quyu \textsc{Kong}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Contact Information}
+
+\begin{tabular}{rl}
+    \textsc{Address:}   & Building 145, North Rd, ANU, Canberra, Australia \\
+    \textsc{Phone:}     & +61 411559267\\
+    \textsc{email:}     & \href{mailto:quyu.kong@anu.edu.au}{quyu.kong@anu.edu.au}
+\end{tabular}
+
+\section{Research Interests}
+\textit{Information diffusion modeling in social media:} stochastic modeling, online networks, computational social socience
+%Section: Work Experience at the top
+\section{Education}
+\begin{tabular}{r|p{11cm}}
+ \textsc{Present} & \textsc{The Australian National University} \\
+ \textsc{- Mar 2018}&\emph{PhD candidate in Computer Science, affiliated with Data61, CSIRO. }\\
+ &\footnotesize{Advised by \href{http://rizoiu.eu/}{Dr. Marian-Andrei Rizoiu}, \href{http://users.cecs.anu.edu.au/~xlx/}{Prof. Lexing Xie}, and \href{https://people.csiro.au/W/S/Stephen-Wan}{Dr. Stephen Wan}} \\
+ &\footnotesize{Thesis Proposed Topic: \textit{Linking Epidemic Models and Hawkes Point Processes for Modeling Information Diffusion}} \\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Dec 2017} & \textsc{The Australian National University} \\\textsc{- Feb 2016}&\emph{Advanced Master of Computing}\\&\footnotesize{Advised by \href{http://rizoiu.eu/}{Dr. Marian-Andrei Rizoiu}} \\
+ &\footnotesize{Research Topic: \textit{Modeling Information Diffusion in Social Network}} \\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Aug 2011} & \emph{Zhejiang University} \\ \textsc{- Jun 2015} & \emph{Bachelor of Agronomy} \\\multicolumn{2}{c}{} \\
+\end{tabular}
+
+
+% \section{Projects}
+% \begin{tabular}{lcc}
+% \tabitem \emph{Hipdemo:}\\
+% \hspace{1em} which is deployed on \href{www.hipdemo.ml}{hipdemo.ml}.\\
+% \hspace{1em} \emph{Highlights:} Stochastic Process, Efficient Machine Learning Algorithm Implementation,\\ \hspace{1em} Interactive Visualisation
+% \vspace{1em}
+% \\
+
+% \tabitem \emph{Modeling information diffusion in social network (One-year research project)} \\
+
+% \hspace{1em} \emph{Highlights:} AMPL (large-scale optimisation), Spatial-temporal Point Process, Simulation \\
+% \hspace{1em} and Prediction\\
+% \\
+% \end{tabular}
+
+\section{Publications}
+\begin{enumerate}[label={[\arabic*]}]
+    \item \textbf{Kong, Quyu}. ``Linking Epidemic Models and Hawkes Point Processes for Modeling Information Diffusion." \textit{In Proceedings of the Twelfth ACM International Conference on Web Search and Data Mining, pp. 818-819. 2019.}
+    \item Rizoiu, Marian-Andrei, Swapnil Mishra, \textbf{Quyu Kong}, Mark Carman, and Lexing Xie. ``SIR-Hawkes: Linking Epidemic Models and Hawkes Processes to Model Diffusions in Finite Populations." \textit{In Proceedings of the 2018 World Wide Web Conference on World Wide Web, pp. 419-428. 2018.}
+    \item \textbf{Kong, Quyu}, Marian-Andrei Rizoiu, Siqi Wu, and Lexing Xie. ``Will This Video Go Viral: Explaining and Predicting the Popularity of Youtube Videos." \textit{In Companion of the The Web Conference 2018 on The Web Conference 2018, pp. 175-178. 2018.}
+\end{enumerate}
+
+\section{Awards}
+\begin{tabular}{rl}
+\textsc{Mar 2018} & Data61 PhD Scholarship \\
+\textsc{Dec 2017} & ANU University Medal \\
+\end{tabular}
+
+\section{Teaching experience}
+\begin{tabular}{r|p{11cm}}
+ 
+  \textsc{Dec 2018} & \textit{Teaching Assistant at ANU} \\\textsc{- Jul 2017}&\footnotesize{Document Analysis, COMP4650/COMP6490, Semester 2}\\\multicolumn{2}{c}{}
+\end{tabular}
+
+\section{Work experience}
+\begin{tabular}{r|p{11cm}}
+ \textsc{Dec 2017} & \textit{Working part-time at Spinify} \\\textsc{- Nov 2016}&\emph{Fullstack Developer}\\&\footnotesize{Building an interactive web app for visualising staff performance in workplace.}\\& \footnotesize{Highlights: web app, reactjs, nodejs, Amazon Lambda}\\\multicolumn{2}{c}{}\\
+\end{tabular}
+
+
+% %Section: Languages
+% \section{Languages}
+% \begin{tabular}{rl}
+%  \textsc{Chinese:}&Mothertongue\\
+% \textsc{English:}&Fluent\\
+% \end{tabular}
+
+\end{document}
